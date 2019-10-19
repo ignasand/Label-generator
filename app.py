@@ -3,14 +3,15 @@ from flask_bootstrap import Bootstrap
 
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, DecimalField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, NumberRange
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
 bootstrap = Bootstrap(app)
 
-class NameForm(FlaskForm):
-    name = StringField('Enter the number', validators=[DataRequired()])
+class NumberForm(FlaskForm):
+    number = DecimalField('Enter first number', validators=[DataRequired()])
+    number2 = DecimalField('Enter second number', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 @app.route('/')
@@ -23,12 +24,16 @@ def about():
 
 @app.route('/contacts', methods=['GET','POST'])
 def contacts():
-    name = None
-    form = NameForm()
+    number = None
+    number2 = None
+    form = NumberForm()
     if form.validate_on_submit():
-        name = form.name.data
-        form.name.data = ''
-    return render_template('contacts.html', form=form, name=name)
+        number = form.number.data
+        number2 = form.number2.data
+        form.number.data = ''
+        form.number2.data = ''
+
+    return render_template('contacts.html', form=form, number=number, number2=number2)
 
 
 

@@ -8,9 +8,16 @@
     <h1>Contacts</h1>
 	<p>Sed pulvinar proin gravida hendrerit. Malesuada pellentesque elit eget gravida cum sociis. Arcu non sodales neque sodales ut etiam sit amet nisl. Vehicula ipsum a arcu cursus vitae congue. Lectus urna duis convallis convallis tellus id interdum velit.
 	</p>
+	<p>
+	{% if number == None and number2 == None%}
+		to do multiplication please enter the numbers
+	{% else %}
+		{{ number }} * {{ number2 }} = {{ number * number2 }}
+	{% endif %}
+	
+	</p>
 </div>
 
 {{ wtf.quick_form(form) }}
-
 
 {% endblock %}
