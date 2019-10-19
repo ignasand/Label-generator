@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Contacts{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Contacts</h1>
+	<p>Sed pulvinar proin gravida hendrerit. Malesuada pellentesque elit eget gravida cum sociis. Arcu non sodales neque sodales ut etiam sit amet nisl. Vehicula ipsum a arcu cursus vitae congue. Lectus urna duis convallis convallis tellus id interdum velit.
+	</p>
+</div>
+
+{{ wtf.quick_form(form) }}
+
+
+{% endblock %}
