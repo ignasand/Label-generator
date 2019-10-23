@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Label generator{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Label generator</h1>
+	{{ wtf.quick_form(form, horizontal_columns=('lg', 2, 10)) }}
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper auctor neque vitae tempus quam pellentesque. Morbi leo urna molestie at. Placerat orci nulla pellentesque dignissim enim sit amet venenatis.
+	</p>
+
+</div>
+{% endblock %}
