@@ -19,6 +19,19 @@ def do_calculations(number, number2):
     result = number / number2
     return result
 
+<<<<<<< Updated upstream
+=======
+def serve_pil_image(pil_img):
+    img_io = BytesIO()
+    pil_img.save(img_io, 'JPEG', quality=70)
+    img_io.seek(0)
+    return send_file(img_io, mimetype='image/jpeg')
+
+@app.route('/img')
+def serve_img():
+    img = Image.new(mode="RGB", size=(200, 200), color=(28, 50, 150))
+    return serve_pil_image(img)
+>>>>>>> Stashed changes
 
 @app.route('/')
 def index():
