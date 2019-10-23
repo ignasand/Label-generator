@@ -2,13 +2,12 @@ from flask import Flask, render_template, send_file
 from flask_bootstrap import Bootstrap
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, DecimalField
-from wtforms.validators import DataRequired, NumberRange
-
+from wtforms import StringField, SubmitField, DecimalField, IntegerField
+from wtforms.validators import DataRequired
 from PIL import Image, ImageFont, ImageDraw
 from io import BytesIO
 
-from label_pil import suggar_num_to_str_en
+from label_pil import suggar_num_to_str_en, generate_label
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
@@ -20,30 +19,29 @@ class NumberForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class LabelForm(FlaskForm):
-    title1 = StringField('Enter title', validators=[DataRequired()])
-    title2 = StringField('Enter type', validators=[DataRequired()])
-    number_alcohol = DecimalField('Enter alcohol (% by vol)', validators=[DataRequired()])
-    number_years = DecimalField('Enter years', validators=[DataRequired()])
-    number_sweetness = DecimalField('Enter residual sugar (g/l)')
+    title1 = StringField('Enter title', default="Marvelous", validators=[DataRequired()])
+    title2 = StringField('Enter type', default="Grape wine", validators=[DataRequired()])
+    number_alcohol = DecimalField('Enter alcohol (% by vol)', default=11, validators=[DataRequired()])
+    number_years = IntegerField('Enter years', default=2019, validators=[DataRequired()])
+    number_sweetness = DecimalField('Enter residual sugar (g/l)', default=44)
     submit = SubmitField('Generate label')
 
-def generate_label(title1, title2, number_alcohol, number_years, number_sweetness):
-    font_size = 20
-    font_color = 'rgb(0, 0, 0)'
-    font = ImageFont.truetype('fonts/Montserrat-Bold.otf', size=font_size)
-    font1 = ImageFont.truetype('fonts/Montserrat-Regular.otf', size=int(font_size))
-    font2 = ImageFont.truetype('fonts/Montserrat-Italic.otf', size=int(font_size / 1.2))
-
-    img = Image.new(mode="RGB", size=(200, 200), color=(255, 255, 255))
-    draw = ImageDraw.Draw(img)
-
-    draw.text((0, 0), title1, fill=font_color, font=font)
-    draw.text((0, 0 + font_size * 1), title2, fill=font_color, font=font)
-    draw.text((0, 0 + font_size * 2), str(number_alcohol), fill=font_color, font=font)
-    draw.text((0, 0 + font_size * 3), str(number_sweetness), fill=font_color, font=font)
-    draw.text((0, 0 + font_size * 4), str(number_years), fill=font_color, font=font)
-
-    return img
+# def generate_label(title1, title2, number_alcohol, number_years, number_sweetness):
+#     font_size = 20
+#     font_color = 'rgb(0, 0, 0)'
+#     font = ImageFont.truetype('fonts/Montserrat-Bold.otf', size=font_size)
+#     font1 = ImageFont.truetype('fonts/Montserrat-Regular.otf', size=int(font_size))
+#     font2 = ImageFont.truetype('fonts/Montserrat-Italic.otf', size=int(font_size / 1.2))
+#
+#     img = Image.new(mode="RGB", size=(200, 200), color=(255, 255, 255))
+#     draw = ImageDraw.Draw(img)
+#
+#     draw.text((0, 0), title1, fill=font_color, font=font)
+#     draw.text((0, 0 + font_size * 1), title2, fill=font_color, font=font)
+#     draw.text((0, 0 + font_size * 2), str(number_alcohol), fill=font_color, font=font)
+#     draw.text((0, 0 + font_size * 3), str(number_sweetness), fill=font_color, font=font)
+#     draw.text((0, 0 + font_size * 4), str(number_years), fill=font_color, font=font)
+#     return img
 
 
 def do_calculations(number, number2):
