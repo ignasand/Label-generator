@@ -5,8 +5,12 @@
 
 {% block page_content %}
 <div class="page-header">
-    <h1>Label generator</h1>
+<!--     <h1 align=middle>Label generator</h1> -->
+	{% if img2 != None %}
+	<p align=center>
+	<img src="data:image/JPEG;base64,{{ img2 }}">
+	</p>
+	{% endif %}
 	{{ wtf.quick_form(form) }}
-
 </div>
 {% endblock %}

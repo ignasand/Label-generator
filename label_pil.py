@@ -41,16 +41,20 @@ def generate_label(title1, title2, number_alcohol, number_years, number_sweetnes
     font_offset = 20
     font_color = 'rgb(0, 0, 0)'
     font = ImageFont.truetype('fonts/Montserrat-Bold.otf', size=font_size)
-    font_regular = ImageFont.truetype('fonts/Montserrat-Regular.otf', size=int(font_size))
+    font_regular = ImageFont.truetype('fonts/Montserrat-Regular.otf', size=int(font_size / 1.2))
     font_italic = ImageFont.truetype('fonts/Montserrat-Italic.otf', size=int(font_size / 1.2))
 
-    img = Image.new(mode="RGB", size=(200, 200), color=(255, 179, 179))
+    img = Image.new(mode="RGB", size=(200, 200), color=(227, 194, 127))
     x, y = img.size
 
     draw = ImageDraw.Draw(img)
-    draw.text((x / 2 - find_middle(img, title1, font), 0), title1, fill=font_color, font=font)
-    draw.text((x / 2 - find_middle(img, title2, font_italic), 0 + font_size * 1 + font_offset), title2, fill=font_color, font=font_italic)
-    draw.text((x / 2 - find_middle(img, number_alcohol, font_regular), 0 + font_size * 2 + font_offset), number_alcohol, fill=font_color, font=font_regular)
-    draw.text((x / 2 - find_middle(img, number_sweetness, font_regular), 0 + font_size * 3 + font_offset), number_sweetness, fill=font_color, font=font_regular)
-    draw.text((x / 2 - find_middle(img, number_years, font_regular), 0 + font_size * 4 + font_offset), number_years, fill=font_color, font=font_regular)
+    draw.text((x / 2 - find_middle(img, title1, font), 1/6*y - 0.5*font_size), title1, fill=font_color, font=font)
+    draw.text((x / 2 - find_middle(img, title2, font_italic), 2/6*y - 0.5*font_size),
+              title2, fill=font_color, font=font_italic)
+    draw.text((x / 2 - find_middle(img, number_alcohol, font_regular), 3/6*y - 0.5*font_size),
+              number_alcohol, fill=font_color, font=font_regular)
+    draw.text((x / 2 - find_middle(img, number_sweetness, font_regular), 4/6*y - 0.5*font_size),
+              number_sweetness, fill=font_color, font=font_regular)
+    draw.text((x / 2 - find_middle(img, number_years, font_regular), 5/6*y - 0.5*font_size),
+              number_years, fill=font_color, font=font_regular)
     return img

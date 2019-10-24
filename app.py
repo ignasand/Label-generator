@@ -6,6 +6,7 @@ from wtforms import StringField, SubmitField, DecimalField, IntegerField
 from wtforms.validators import DataRequired
 from PIL import Image, ImageFont, ImageDraw
 from io import BytesIO
+import base64
 
 from label_pil import suggar_num_to_str_en, generate_label
 
@@ -54,6 +55,14 @@ def serve_pil_image(pil_img):
     img_io.seek(0)
     return send_file(img_io, mimetype='image/jpeg')
 
+
+def load_image(pil_img):
+    img_io = BytesIO()
+    pil_img.save(img_io, 'JPEG', quality=100)
+    img_temp = base64.b64encode(img_io.getvalue())
+    return img_temp.decode('ascii')
+
+
 @app.route('/img')
 def serve_img():
     img = Image.new(mode="RGB", size=(200, 200), color=(28, 50, 150))
@@ -75,6 +84,7 @@ def label():
     number_alcohol = None
     number_years = None
     number_sweetness = None
+    img2 = None
 
     if form.validate_on_submit():
         title1 = form.title1.data
@@ -87,8 +97,9 @@ def label():
 
         # img = Image.new(mode="RGB", size=(200, 200), color=(255, 255, 255))
         img = generate_label(title1, title2, number_alcohol, number_years, number_sweetness)
-        return serve_pil_image(img)
-    return render_template('label.html', form=form)
+        # return serve_pil_image(img)
+        img2 = load_image(img)
+    return render_template('label.html', form=form, img2=img2)
 
 @app.route('/contacts', methods=['GET','POST'])
 def contacts():
