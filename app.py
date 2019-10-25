@@ -2,7 +2,7 @@ from flask import Flask, render_template, send_file
 from flask_bootstrap import Bootstrap
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, DecimalField, IntegerField
+from wtforms import StringField, SubmitField, DecimalField, IntegerField, RadioField
 from wtforms.validators import DataRequired, Length, NumberRange
 from PIL import Image, ImageFont, ImageDraw
 from io import BytesIO
@@ -28,6 +28,8 @@ class LabelForm(FlaskForm):
                                 validators=[DataRequired(), NumberRange(min=1900, max=2200, message=None)])
     number_sweetness = DecimalField('Enter residual sugar (g/l)', default=44,
                                     validators=[NumberRange(min=0, max=300, message=None)])
+    radio = RadioField('Label', choices=[('C1', 'Single label'), ('C2', 'Many labels on a4 size (300dpi)')])
+
     submit = SubmitField('Generate label')
 
 # def generate_label(title1, title2, number_alcohol, number_years, number_sweetness):
@@ -90,18 +92,34 @@ def label():
     img2 = None
 
     if form.validate_on_submit():
-        title1 = form.title1.data
-        title2 = form.title2.data
-        number_alcohol = form.number_alcohol.data
-        number_years = form.number_years.data
-        number_sweetness = form.number_sweetness.data
+        if form.radio.data == 'C1':
+            title1 = form.title1.data
+            title2 = form.title2.data
+            number_alcohol = form.number_alcohol.data
+            number_years = form.number_years.data
+            number_sweetness = form.number_sweetness.data
 
-        number_sweetness = suggar_num_to_str_en(number_sweetness)
+            number_sweetness = suggar_num_to_str_en(number_sweetness)
 
-        # img = Image.new(mode="RGB", size=(200, 200), color=(255, 255, 255))
-        img = generate_label(title1, title2, number_alcohol, number_years, number_sweetness)
-        # return serve_pil_image(img)
-        img2 = load_image(img)
+            # img = Image.new(mode="RGB", size=(200, 200), color=(255, 255, 255))
+            img = generate_label(title1, title2, number_alcohol, number_years, number_sweetness)
+            # return serve_pil_image(img)
+            img2 = load_image(img)
+        if form.radio.data == 'C2':
+            title1 = form.title1.data
+            title2 = form.title2.data
+            number_alcohol = form.number_alcohol.data
+            number_years = form.number_years.data
+            number_sweetness = form.number_sweetness.data
+            number_sweetness = suggar_num_to_str_en(number_sweetness)
+            img = generate_label(title1, title2, number_alcohol, number_years, number_sweetness)
+
+            img_multy = Image.new("RGB", (400, 266))
+            img_multy.paste(img, (0, 0))
+            img_multy.paste(img, (200, 0))
+
+            img2 = load_image(img_multy)
+
     return render_template('label.html', form=form, img2=img2)
 
 @app.route('/contacts', methods=['GET','POST'])
