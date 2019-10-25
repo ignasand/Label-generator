@@ -1,0 +1,16 @@
+body {background-image: url('/static/img/home.jpg');
+		background-size:cover;
+		
+		color: #e3dac3;
+		}
+		
+/* @media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+} */
+
+.container{
+        max-width: 600px;
+    }
+

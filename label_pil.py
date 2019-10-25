@@ -1,4 +1,4 @@
-from PIL import Image, ImageDraw, ImageFilter, ImageEnhance, ImageFont, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter, ImageEnhance, ImageFont, ImageDraw, ImageOps
 
 
 def suggar_num_to_str(suggar):
@@ -32,6 +32,7 @@ def find_middle(im, text, font):
     w, h = draw.textsize(text, font=font)
     return int(w/2)
 
+
 def generate_label(title1, title2, number_alcohol, number_years, number_sweetness):
     number_alcohol = "alc. " + str(round(number_alcohol, 1)) + " % by Vol."
     number_sweetness = str(number_sweetness)
@@ -42,19 +43,41 @@ def generate_label(title1, title2, number_alcohol, number_years, number_sweetnes
     font_color = 'rgb(0, 0, 0)'
     font = ImageFont.truetype('fonts/Montserrat-Bold.otf', size=font_size)
     font_regular = ImageFont.truetype('fonts/Montserrat-Regular.otf', size=int(font_size / 1.2))
-    font_italic = ImageFont.truetype('fonts/Montserrat-Italic.otf', size=int(font_size / 1.2))
+    font_italic = ImageFont.truetype('fonts/Montserrat-Italic.otf', size=int(font_size / 1.5))
 
     img = Image.new(mode="RGB", size=(200, 200), color=(227, 194, 127))
     x, y = img.size
 
     draw = ImageDraw.Draw(img)
-    draw.text((x / 2 - find_middle(img, title1, font), 1/6*y - 0.5*font_size), title1, fill=font_color, font=font)
-    draw.text((x / 2 - find_middle(img, title2, font_italic), 2/6*y - 0.5*font_size),
-              title2, fill=font_color, font=font_italic)
-    draw.text((x / 2 - find_middle(img, number_alcohol, font_regular), 3/6*y - 0.5*font_size),
-              number_alcohol, fill=font_color, font=font_regular)
-    draw.text((x / 2 - find_middle(img, number_sweetness, font_regular), 4/6*y - 0.5*font_size),
-              number_sweetness, fill=font_color, font=font_regular)
-    draw.text((x / 2 - find_middle(img, number_years, font_regular), 5/6*y - 0.5*font_size),
+
+    if find_middle(img, title1, font) * 2 < x - 10:
+        draw.text((x / 2 - find_middle(img, title1, font), 2 / 6 * y - 1 * font_size), title1, fill=font_color, font=font)
+    else:
+        w = find_middle(img, title1, font) * 2
+        font_temp = ImageFont.truetype('fonts/Montserrat-Bold.otf', size=int(font_size * (x - 10) / w))
+        draw.text((x / 2 - find_middle(img, title1, font_temp), 2 / 6 * y - 1 * font_size), title1, fill=font_color,
+                  font=font_temp)
+
+    if find_middle(img, title2, font_regular) * 2 < x - 10:
+        draw.text((x / 2 - find_middle(img, title2, font_regular), 3 / 6 * y - 0.5 * font_size),
+                  title2, fill=font_color, font=font_regular)
+    else:
+        w = find_middle(img, title2, font_regular) * 2
+        font_regular_temp = ImageFont.truetype('fonts/Montserrat-Regular.otf', size=int(((font_size * (x - 10) / w)) / 1.2))
+        draw.text((x / 2 - find_middle(img, title2, font_regular_temp), 3 / 6 * y - 0.5 * font_size),
+                  title2, fill=font_color, font=font_regular_temp)
+
+
+
+
+    draw.text((x / 2 - find_middle(img, number_years, font_regular), 4 / 6 * y - 0.5 * font_size),
               number_years, fill=font_color, font=font_regular)
+    draw.text((x / 2 - find_middle(img, number_sweetness, font_italic), 5 / 6 * y - 0.5 * font_size),
+              number_sweetness, fill=font_color, font=font_italic)
+    draw.text((x / 2 - find_middle(img, number_alcohol, font_italic), 5 / 6 * y + 0.5 * font_size),
+              number_alcohol, fill=font_color, font=font_italic)
+
+    img = ImageOps.expand(img, border=3, fill='black')
+    img = ImageOps.expand(img, border=3, fill='white')
+
     return img

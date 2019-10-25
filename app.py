@@ -3,7 +3,7 @@ from flask_bootstrap import Bootstrap
 
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, DecimalField, IntegerField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, Length, NumberRange
 from PIL import Image, ImageFont, ImageDraw
 from io import BytesIO
 import base64
@@ -20,11 +20,14 @@ class NumberForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class LabelForm(FlaskForm):
-    title1 = StringField('Enter title', default="Marvelous", validators=[DataRequired()])
-    title2 = StringField('Enter type', default="Grape wine", validators=[DataRequired()])
-    number_alcohol = DecimalField('Enter alcohol (% by vol)', default=11, validators=[DataRequired()])
-    number_years = IntegerField('Enter years', default=2019, validators=[DataRequired()])
-    number_sweetness = DecimalField('Enter residual sugar (g/l)', default=44)
+    title1 = StringField('Enter title', default="Marvelous", validators=[DataRequired(), Length(max=25)])
+    title2 = StringField('Enter type', default="Grape wine", validators=[DataRequired(), Length(max=25)])
+    number_alcohol = DecimalField('Enter alcohol (% by vol)', default=11,
+                                  validators=[DataRequired(), NumberRange(min=0, max=50, message=None)])
+    number_years = IntegerField('Enter years', default=2019,
+                                validators=[DataRequired(), NumberRange(min=1900, max=2200, message=None)])
+    number_sweetness = DecimalField('Enter residual sugar (g/l)', default=44,
+                                    validators=[NumberRange(min=0, max=300, message=None)])
     submit = SubmitField('Generate label')
 
 # def generate_label(title1, title2, number_alcohol, number_years, number_sweetness):
