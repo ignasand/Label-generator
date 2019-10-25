@@ -16,9 +16,9 @@ def suggar_num_to_str(suggar):
 
 def suggar_num_to_str_en(suggar):
     if suggar < 18:
-        suggar_str = 'dry'
+        suggar_str = 'dry '
     elif suggar < 31.5:
-        suggar_str = 'off-dry'
+        suggar_str = 'off-dry '
     elif suggar < 45:
         suggar_str = 'semi-sweet'
     else:
@@ -45,7 +45,7 @@ def generate_label(title1, title2, number_alcohol, number_years, number_sweetnes
     font_regular = ImageFont.truetype('fonts/Montserrat-Regular.otf', size=int(font_size / 1.2))
     font_italic = ImageFont.truetype('fonts/Montserrat-Italic.otf', size=int(font_size / 1.5))
 
-    img = Image.new(mode="RGB", size=(200, 200), color=(227, 194, 127))
+    img = Image.new(mode="RGB", size=(200, 266), color=(227, 194, 127))
     x, y = img.size
 
     draw = ImageDraw.Draw(img)

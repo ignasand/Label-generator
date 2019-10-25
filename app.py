@@ -20,7 +20,7 @@ class NumberForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class LabelForm(FlaskForm):
-    title1 = StringField('Enter title', default="Marvelous", validators=[DataRequired(), Length(max=25)])
+    title1 = StringField('Enter title', default="Dragon balls", validators=[DataRequired(), Length(max=25)])
     title2 = StringField('Enter type', default="Grape wine", validators=[DataRequired(), Length(max=25)])
     number_alcohol = DecimalField('Enter alcohol (% by vol)', default=11,
                                   validators=[DataRequired(), NumberRange(min=0, max=50, message=None)])
