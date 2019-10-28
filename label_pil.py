@@ -38,14 +38,16 @@ def generate_label(title1, title2, number_alcohol, number_years, number_sweetnes
     number_sweetness = str(number_sweetness)
     number_years = str(number_years)
 
-    font_size = 20
+    font_size = 25
     font_offset = 20
     font_color = 'rgb(0, 0, 0)'
     font = ImageFont.truetype('fonts/Montserrat-Bold.otf', size=font_size)
     font_regular = ImageFont.truetype('fonts/Montserrat-Regular.otf', size=int(font_size / 1.2))
     font_italic = ImageFont.truetype('fonts/Montserrat-Italic.otf', size=int(font_size / 1.5))
 
-    img = Image.new(mode="RGB", size=(200, 266), color=(227, 194, 127))
+    # img = Image.new(mode="RGB", size=(int(1240/5-12), int(1754/5-12)), color=(227, 194, 127))
+    img = Image.new(mode="RGB", size=(int(1240 / 5 - 12), int(1754 / 5 - 12)), color=(255, 255, 255))
+
     x, y = img.size
 
     draw = ImageDraw.Draw(img)

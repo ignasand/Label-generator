@@ -8,9 +8,11 @@
 <!--     <h1 align=middle>Label generator</h1> -->
 	{% if img2 != None %}
 	<p align=center>
-	<img src="data:image/JPEG;base64,{{ img2 }}">
+	<img src="data:image/JPEG;base64,{{ img2 }}" style="width:248px; height:auto;">
 	</p>
 	{% endif %}
+	<div style="background: rgba(0,0,0,0.8); padding: 20px;">
 	{{ wtf.quick_form(form) }}
+	</div>
 </div>
 {% endblock %}

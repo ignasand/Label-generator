@@ -28,7 +28,7 @@ class LabelForm(FlaskForm):
                                 validators=[DataRequired(), NumberRange(min=1900, max=2200, message=None)])
     number_sweetness = DecimalField('Enter residual sugar (g/l)', default=44,
                                     validators=[NumberRange(min=0, max=300, message=None)])
-    radio = RadioField('Label', choices=[('C1', 'Single label'), ('C2', 'Many labels on a4 size (300dpi)')])
+    radio = RadioField('Label', choices=[('C1', 'Single label'), ('C2', '25 labels on a4 size (150dpi)')], default='C1')
 
     submit = SubmitField('Generate label')
 
@@ -114,9 +114,14 @@ def label():
             number_sweetness = suggar_num_to_str_en(number_sweetness)
             img = generate_label(title1, title2, number_alcohol, number_years, number_sweetness)
 
-            img_multy = Image.new("RGB", (400, 266))
-            img_multy.paste(img, (0, 0))
-            img_multy.paste(img, (200, 0))
+            img_multy = Image.new("RGB", (1240, 1754))
+            for i in range(0, 5):
+                for j in range(0, 5):
+                    img_multy.paste(img, (i * int(1240 / 5), j * int(1754 / 5)))
+                    img_multy.paste(img, (i * int(1240 / 5), j * int(1754 / 5)))
+                    img_multy.paste(img, (i * int(1240 / 5), j * int(1754 / 5)))
+                    img_multy.paste(img, (i * int(1240 / 5), j * int(1754 / 5)))
+                    img_multy.paste(img, (i * int(1240 / 5), j * int(1754 / 5)))
 
             img2 = load_image(img_multy)
 
