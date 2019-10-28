@@ -33,7 +33,7 @@ def find_middle(im, text, font):
     return int(w/2)
 
 
-def generate_label(title1, title2, number_alcohol, number_years, number_sweetness):
+def generate_label(title1, title2, number_alcohol, number_years, number_sweetness, color_var):
     number_alcohol = "alc. " + str(round(number_alcohol, 1)) + " % by Vol."
     number_sweetness = str(number_sweetness)
     number_years = str(number_years)
@@ -46,7 +46,11 @@ def generate_label(title1, title2, number_alcohol, number_years, number_sweetnes
     font_italic = ImageFont.truetype('fonts/Montserrat-Italic.otf', size=int(font_size / 1.5))
 
     # img = Image.new(mode="RGB", size=(int(1240/5-12), int(1754/5-12)), color=(227, 194, 127))
-    img = Image.new(mode="RGB", size=(int(1240 / 5 - 12), int(1754 / 5 - 12)), color=(255, 255, 255))
+
+    # img = Image.new(mode="RGB", size=(int(1240 / 5 - 12), int(1754 / 5 - 12)), color=(255, 255, 255))
+    img = Image.new(mode="RGB", size=(int(1240 / 5 - 12), int(1754 / 5 - 12)), color=color_var)
+
+
 
     x, y = img.size
 

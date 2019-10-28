@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
+{% block scripts %}
+  {{ super() }}
+  {{ colorpicker.loader() }}
+  {{ colorpicker.picker(ids=['.color'], showAlpha='false') }}
+{% endblock %}
+
 {% block title %}Label generator{% endblock %}
 
 {% block page_content %}
@@ -12,7 +18,12 @@
 	</p>
 	{% endif %}
 	<div style="background: rgba(0,0,0,0.8); padding: 20px;">
-	{{ wtf.quick_form(form) }}
+		<form class="verticalform" method="post">
+			<label for="rgb">Background color</label><br>
+			<input name="rgb" class='color' value='{{ color_var }}'/>
+			<p></p>
+			{{ wtf.quick_form(form) }}
+		</form>
 	</div>
 </div>
 {% endblock %}
