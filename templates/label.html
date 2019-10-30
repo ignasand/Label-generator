@@ -10,14 +10,14 @@
 {% block title %}Label generator{% endblock %}
 
 {% block page_content %}
-<div class="page-header">
+<div class="d-flex justify-content-center">
 <!--     <h1 align=middle>Label generator</h1> -->
+	<div style="background: rgba(0,0,0,0.5); padding: 20px;">
 	{% if img2 != None %}
 	<p align=center>
 	<img src="data:image/JPEG;base64,{{ img2 }}" style="width:248px; height:auto;">
 	</p>
 	{% endif %}
-	<div style="background: rgba(0,0,0,0.8); padding: 20px;">
 		<form class="verticalform" method="post">
 			<label for="rgb">Background color</label><br>
 			<input name="rgb" class='color' value='{{ color_var }}'/>

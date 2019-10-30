@@ -13,13 +13,15 @@ import base64
 
 from label_pil import suggar_num_to_str_en, generate_label
 
+from wine_classifier_load import prediction
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
 bootstrap = Bootstrap(app)
 colorpicker(app)
 
 app.debug = True
-toolbar = DebugToolbarExtension(app)
+# toolbar = DebugToolbarExtension(app)
 
 class LabelForm(FlaskForm):
     title1 = StringField('Enter title', default="Dragon balls", validators=[DataRequired(), Length(max=25)])
@@ -33,6 +35,16 @@ class LabelForm(FlaskForm):
     radio = RadioField('Label', choices=[('C1', 'Single label'), ('C2', '25 labels on a4 size (150dpi)')], default='C1')
 
     submit = SubmitField('Generate label')
+
+class PredictForm(FlaskForm):
+    residualSugar = DecimalField('Enter residual sugar (g/l)', default=5,
+                                  validators=[DataRequired(), NumberRange(min=0, max=300, message=None)])
+    ph = DecimalField('Enter pH', default=3.0,
+                                  validators=[DataRequired(), NumberRange(min=2.5, max=4, message=None)])
+    alcohol = DecimalField('Enter alcohol (% by vol)', default=11,
+                                  validators=[DataRequired(), NumberRange(min=8, max=16, message=None)])
+    submit = SubmitField('Check quality')
+
 
 def serve_pil_image(pil_img):
     img_io = BytesIO()
@@ -125,6 +137,20 @@ def contacts():
 
     return render_template('contacts.html', form=form, number=number, number2=number2, result=result)
 
+@app.route('/predict', methods=['GET','POST'])
+def predict():
+    quality = None
+    residualSugar = None
+    ph = None
+    alcohol = None
+    form = PredictForm()
 
+    if form.validate_on_submit():
+        residualSugar = form.residualSugar.data
+        ph = form.ph.data
+        alcohol = form.alcohol.data
+        quality = prediction(residualSugar, ph, alcohol)
+
+    return render_template('predict.html', form=form, quality=quality)
 
 

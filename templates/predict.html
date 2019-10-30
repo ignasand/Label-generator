@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Predict quality{% endblock %}
+
+{% block page_content %}
+<div style="background: rgba(0,0,0,0.5); padding: 20px;">
+	<div></div>
+	{% if quality != None %}
+	<p align=center>
+	Predicted wine quality is: {{ quality }}
+	</p>
+	{% endif %}
+	<div>
+		<form class="verticalform" method="post">
+			{{ wtf.quick_form(form) }}
+		</form>
+	</div>
+</div>
+{% endblock %}
