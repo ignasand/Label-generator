@@ -1,17 +1,13 @@
 body {background-image: url('/static/img/home.jpg');
 		background-size:cover;
-		color: #e3dac3;
+		background-color: #c8c9c3;
+		background-repeat: no-repeat
 		}
-		
-/* @media (min-width: 1200px) {
-    .container{
-        max-width: 970px;
-    }
-} */
 
 .container{
         max-width: 600px;
     }
+	
 	
 a:link {
 color: #999999;
@@ -21,4 +17,18 @@ color: #999999;
 }
 a:hover {
 color: #999999;
+}
+
+.text-primary {
+	color: white;
+}
+
+.my-style {
+	 background: rgba(0,0,0,0.6);
+	 padding: 20px;
+	 border-radius: 10px;
+}
+
+.verticalform {
+	color: white;
 }

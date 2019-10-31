@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="149a34b3-326c-4997-9d3f-c33f3b742853" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/img/home.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/home.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/home2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/home2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/mystyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/mystyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/label.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/label.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/predict.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/predict.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wine_classifier_load.py" beforeDir="false" afterPath="$PROJECT_DIR$/wine_classifier_load.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,8 +23,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="153" column="70" lean-forward="true" selection-start-line="139" selection-end-line="153" selection-end-column="70" />
+            <state relative-caret-position="311">
+              <caret line="153" column="70" selection-start-line="139" selection-end-line="153" selection-end-column="70" />
               <folding>
                 <element signature="e#0#60#0" expanded="true" />
               </folding>
@@ -52,8 +53,8 @@
       <file leaf-file-name="wine_classifier.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../_wine classifier/wine_classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="52" column="71" selection-start-line="52" selection-start-column="71" selection-end-line="52" selection-end-column="71" />
+            <state relative-caret-position="51">
+              <caret line="51" selection-start-line="51" selection-end-line="52" selection-end-column="72" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -61,11 +62,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wine_classifier_load.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sketch_1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../_wine classifier/sketch_1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-318">
+              <caret line="99" column="22" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+              <folding>
+                <element signature="e#23#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wine_classifier_augmented_data.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../_wine classifier/wine_classifier_augmented_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="711">
+              <caret line="50" column="15" selection-start-line="50" selection-start-column="15" selection-end-line="61" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wine_classifier_load.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wine_classifier_load.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="272">
+              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -73,7 +98,7 @@
       <file leaf-file-name="wine_ML09-12.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../ML/wine_ML09-12.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="51">
               <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -96,9 +121,13 @@
       <find>font2</find>
       <find>Montserrat-Bold.otf</find>
       <find>200</find>
+      <find>random_normal</find>
+      <find>train.AdagradOptimizer</find>
     </findStrings>
     <replaceStrings>
       <replace>font_italic</replace>
+      <replace>random.normal</replace>
+      <replace>compat.v1.train.AdagradOptimizer</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -111,9 +140,12 @@
         <option value="$PROJECT_DIR$/label_pil.py" />
         <option value="$PROJECT_DIR$/../../ML/wine_ML.py" />
         <option value="$PROJECT_DIR$/../../_wine classifier/wine_classifier_load.py" />
-        <option value="$PROJECT_DIR$/wine_classifier_load.py" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/../../_wine classifier/wine_classifier.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
+        <option value="$PROJECT_DIR$/../../_wine classifier/sketch_1.py" />
+        <option value="$PROJECT_DIR$/wine_classifier_load.py" />
+        <option value="$PROJECT_DIR$/../../_wine classifier/wine_classifier_augmented_data.py" />
       </list>
     </option>
   </component>
@@ -133,6 +165,7 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -148,8 +181,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.wine_classifier">
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.sketch_1">
+    <configuration name="scratch_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Label generator" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -157,17 +190,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="wine_ML" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="sketch_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Label generator" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -175,11 +208,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../ML" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../_wine classifier" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../ML/wine_ML.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../_wine classifier/sketch_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -203,6 +236,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="wine_classifier_augmented_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Label generator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../_wine classifier" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../_wine classifier/wine_classifier_augmented_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="wine_classifier_load (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Label generator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -221,38 +272,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="wine_classifier_load" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Label generator" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../_wine classifier" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../_wine classifier/wine_classifier_load.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <list>
-      <item itemvalue="Python.app" />
-      <item itemvalue="Python.wine_ML" />
       <item itemvalue="Python.wine_classifier" />
-      <item itemvalue="Python.wine_classifier_load" />
       <item itemvalue="Python.wine_classifier_load (1)" />
+      <item itemvalue="Python.scratch_1" />
+      <item itemvalue="Python.sketch_1" />
+      <item itemvalue="Python.wine_classifier_augmented_data" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.wine_classifier" />
+        <item itemvalue="Python.sketch_1" />
+        <item itemvalue="Python.wine_classifier_augmented_data" />
         <item itemvalue="Python.wine_classifier_load (1)" />
-        <item itemvalue="Python.wine_classifier_load" />
-        <item itemvalue="Python.wine_ML" />
-        <item itemvalue="Python.app" />
+        <item itemvalue="Python.scratch_1" />
+        <item itemvalue="Python.wine_classifier" />
       </list>
     </recent_temporary>
   </component>
@@ -278,7 +311,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.3285528" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43807042" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33898306" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -294,37 +327,32 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.149375" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3298292" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Python Console" order="7" weight="0.3298292" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.3298292" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="110" column="82" selection-start-line="110" selection-start-column="63" selection-end-line="110" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Label_generator/f1.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -568,20 +596,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/label_pil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="92" selection-start-line="35" selection-start-column="81" selection-end-line="35" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../ML/wine_ML.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -599,9 +617,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="153" column="70" selection-start-line="139" selection-end-line="153" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/label_pil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="92" selection-start-line="35" selection-start-column="81" selection-end-line="35" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="9" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/theano/gof/lazylinker_c.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/theano/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/sknn/mlp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../ML/wine_ML09-12.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="51">
           <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -609,30 +672,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wine_classifier_load.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../_wine classifier/sketch_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-318">
+          <caret line="99" column="22" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+          <folding>
+            <element signature="e#23#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../_wine classifier/wine_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="52" column="71" selection-start-line="52" selection-start-column="71" selection-end-line="52" selection-end-column="71" />
+        <state relative-caret-position="51">
+          <caret line="51" selection-start-line="51" selection-end-line="52" selection-end-column="72" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/../../_wine classifier/wine_classifier_augmented_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="153" column="70" lean-forward="true" selection-start-line="139" selection-end-line="153" selection-end-column="70" />
+        <state relative-caret-position="711">
+          <caret line="50" column="15" selection-start-line="50" selection-start-column="15" selection-end-line="61" selection-end-column="30" />
           <folding>
-            <element signature="e#0#60#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wine_classifier_load.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="14" selection-end-column="21" />
         </state>
       </provider>
     </entry>

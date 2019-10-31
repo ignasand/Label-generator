@@ -14,4 +14,4 @@ def prediction(a, b, c):
     elif result == 3:
         return "good"
 
-print(prediction(4.0, 3.72, 14.0))
+print(prediction(35.0, 3.72, 14.0))

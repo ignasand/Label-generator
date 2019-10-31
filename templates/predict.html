@@ -4,10 +4,10 @@
 {% block title %}Predict quality{% endblock %}
 
 {% block page_content %}
-<div style="background: rgba(0,0,0,0.5); padding: 20px;">
+<div class="my-style">
 	<div></div>
 	{% if quality != None %}
-	<p align=center>
+	<p class="text-primary" align=center style="font-size: 20px;">
 	Predicted wine quality is: {{ quality }}
 	</p>
 	{% endif %}
