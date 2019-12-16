@@ -5,6 +5,7 @@
   {{ super() }}
   {{ colorpicker.loader() }}
   {{ colorpicker.picker(ids=['.color'], showAlpha='false') }}
+  {{ colorpicker.picker(ids=['.color2'], showAlpha='false') }}
 {% endblock %}
 
 {% block title %}Label generator{% endblock %}
@@ -18,9 +19,11 @@
 	<img src="data:image/JPEG;base64,{{ img2 }}" style="width:248px; height:auto;">
 	</p>
 	{% endif %}
-		<form class="verticalform" method="post">
+		<form class="verticalform" method="post get">
 			<label for="rgb">Background color</label><br>
-			<input name="rgb" class='color' value='{{ color_var }}'/>
+			<input name="rgb" class='color' value='{{ color_var }}'/><br>
+			<label for="rgb2">Text color</label><br>
+			<input name="rgb2" class='color2' value='{{ color_var2 }}'/>
 			<p></p>
 			{{ wtf.quick_form(form) }}
 		</form>

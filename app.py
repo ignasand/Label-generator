@@ -82,6 +82,7 @@ def label():
     number_sweetness = None
     img2 = None
     color_var = 'rgb(255,255,255)'
+    color_var2 = 'rgb(0,0,0)'
 
     if form.validate_on_submit():
         if form.radio.data == 'C1':
@@ -89,13 +90,15 @@ def label():
             title2 = form.title2.data
             if color_var != request.form.get('rgb'):
                 color_var = request.form.get('rgb')
+            if color_var2 != request.form.get('rgb2'):
+                color_var2 = request.form.get('rgb2')
             number_alcohol = form.number_alcohol.data
             number_years = form.number_years.data
             number_sweetness = form.number_sweetness.data
             number_sweetness = suggar_num_to_str_en(number_sweetness)
 
             # img = Image.new(mode="RGB", size=(200, 200), color=(255, 255, 255))
-            img = generate_label(title1, title2, number_alcohol, number_years, number_sweetness, color_var)
+            img = generate_label(title1, title2, number_alcohol, number_years, number_sweetness, color_var, color_var2)
             # return serve_pil_image(img)
             img2 = load_image(img)
         if form.radio.data == 'C2':
@@ -103,24 +106,26 @@ def label():
             title2 = form.title2.data
             if color_var != request.form.get('rgb'):
                 color_var = request.form.get('rgb')
+            if color_var2 != request.form.get('rgb2'):
+                color_var2 = request.form.get('rgb2')
             number_alcohol = form.number_alcohol.data
             number_years = form.number_years.data
             number_sweetness = form.number_sweetness.data
             number_sweetness = suggar_num_to_str_en(number_sweetness)
-            img = generate_label(title1, title2, number_alcohol, number_years, number_sweetness, color_var)
+            img = generate_label(title1, title2, number_alcohol, number_years, number_sweetness, color_var, color_var2)
 
-            img_multy = Image.new("RGB", (1240, 1754))
+            img_multy = Image.new("RGB", (2480, 3508))
             for i in range(0, 5):
                 for j in range(0, 5):
-                    img_multy.paste(img, (i * int(1240 / 5), j * int(1754 / 5)))
-                    img_multy.paste(img, (i * int(1240 / 5), j * int(1754 / 5)))
-                    img_multy.paste(img, (i * int(1240 / 5), j * int(1754 / 5)))
-                    img_multy.paste(img, (i * int(1240 / 5), j * int(1754 / 5)))
-                    img_multy.paste(img, (i * int(1240 / 5), j * int(1754 / 5)))
+                    img_multy.paste(img, (i * int(2480 / 5), j * int(3508 / 5)))
+                    img_multy.paste(img, (i * int(2480 / 5), j * int(3508 / 5)))
+                    img_multy.paste(img, (i * int(2480 / 5), j * int(3508 / 5)))
+                    img_multy.paste(img, (i * int(2480 / 5), j * int(3508 / 5)))
+                    img_multy.paste(img, (i * int(2480 / 5), j * int(3508 / 5)))
 
             img2 = load_image(img_multy)
 
-    return render_template('label.html', form=form, img2=img2, color_var=color_var)
+    return render_template('label.html', form=form, img2=img2, color_var=color_var, color_var2=color_var2)
 
 @app.route('/contacts', methods=['GET','POST'])
 def contacts():

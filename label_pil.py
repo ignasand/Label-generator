@@ -33,14 +33,16 @@ def find_middle(im, text, font):
     return int(w/2)
 
 
-def generate_label(title1, title2, number_alcohol, number_years, number_sweetness, color_var):
+def generate_label(title1, title2, number_alcohol, number_years, number_sweetness, color_var, color_val2):
     number_alcohol = "alc. " + str(round(number_alcohol, 1)) + " % by Vol."
     number_sweetness = str(number_sweetness)
     number_years = str(number_years)
 
-    font_size = 25
+    font_size = 25 * 2
     font_offset = 20
-    font_color = 'rgb(0, 0, 0)'
+    font_color = color_val2
+    # print(font_color)
+    # font_color = 'rgb(0, 0, 0)'
     font = ImageFont.truetype('fonts/Montserrat-Bold.otf', size=font_size)
     font_regular = ImageFont.truetype('fonts/Montserrat-Regular.otf', size=int(font_size / 1.2))
     font_italic = ImageFont.truetype('fonts/Montserrat-Italic.otf', size=int(font_size / 1.5))
@@ -48,7 +50,16 @@ def generate_label(title1, title2, number_alcohol, number_years, number_sweetnes
     # img = Image.new(mode="RGB", size=(int(1240/5-12), int(1754/5-12)), color=(227, 194, 127))
 
     # img = Image.new(mode="RGB", size=(int(1240 / 5 - 12), int(1754 / 5 - 12)), color=(255, 255, 255))
-    img = Image.new(mode="RGB", size=(int(1240 / 5 - 12), int(1754 / 5 - 12)), color=color_var)
+
+    img = Image.new(mode="RGB", size=(int(2480 / 5 - 12), int(3508 / 5 - 12)), color=color_var)
+
+    basewidth = 200
+    img_temp = Image.open("static/img/bird2.jpg")
+    wpercent = (basewidth / float(img_temp.size[0]))
+    hsize = int((float(img_temp.size[1]) * float(wpercent)))
+    img_temp = img_temp.resize((basewidth, hsize), Image.ANTIALIAS)
+    img.paste(img_temp, (0, 0))
+
 
 
 
